@@ -1,0 +1,65 @@
+{
+    "name": "rushing/laravel-schema-org",
+    "description": "A boundary projector marrying spatie/laravel-data DTOs to spatie/schema-org: a typed registry + attribute-driven primitives that project a Data object into a Schema.org node (JSON-LD) at the edge. Internal identity (@id) is reused from laravel-json-reference; the leaf stays domain-agnostic and never names concrete schema.org types.",
+    "keywords": ["laravel", "schema-org", "json-ld", "structured-data", "laravel-data", "seo"],
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Stephen Rushing",
+            "email": "stephenr85@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "illuminate/contracts": "^11.0|^12.0",
+        "illuminate/support": "^11.0|^12.0",
+        "rushing/laravel-json-reference": "dev-main",
+        "spatie/laravel-data": "^4.0",
+        "spatie/laravel-package-tools": "^1.16",
+        "spatie/schema-org": "^3.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^10.0",
+        "pestphp/pest": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rushing\\SchemaOrg\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rushing\\SchemaOrg\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Rushing\\SchemaOrg\\ServiceProvider"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/stephenr85/laravel-json-reference.git"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "pint": "@php -d memory_limit=512M vendor/bin/pint"
+    }
+}
