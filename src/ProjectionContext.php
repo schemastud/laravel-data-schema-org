@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rushing\SchemaOrg;
+namespace Rushing\DataSchemaOrg;
 
 use Rushing\JsonReference\NodeId;
 
@@ -25,9 +25,9 @@ final class ProjectionContext
     public static function fromConfig(?string $id = null, ?string $locale = null): self
     {
         return new self(
-            baseUri: (string) config('schema-org.base_uri', '') ?: null,
+            baseUri: (string) config('data-schema-org.base_uri', '') ?: null,
             id: $id,
-            locale: $locale ?? (config('schema-org.locale') ? (string) config('schema-org.locale') : null),
+            locale: $locale ?? (config('data-schema-org.locale') ? (string) config('data-schema-org.locale') : null),
         );
     }
 

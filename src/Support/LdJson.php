@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Rushing\SchemaOrg\Support;
+namespace Rushing\DataSchemaOrg\Support;
 
-use Rushing\SchemaOrg\SchemaOrgGraph;
+use Rushing\DataSchemaOrg\SchemaOrgGraph;
 use Spatie\SchemaOrg\Type;
 
 /**

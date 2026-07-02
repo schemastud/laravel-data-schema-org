@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rushing\SchemaOrg\Exceptions;
+namespace Rushing\DataSchemaOrg\Exceptions;
 
 use RuntimeException;
 

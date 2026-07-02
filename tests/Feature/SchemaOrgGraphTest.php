@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
+use Rushing\DataSchemaOrg\SchemaOrgGraph;
+use Rushing\DataSchemaOrg\Support\LdJson;
 use Rushing\JsonReference\Vocabulary;
-use Rushing\SchemaOrg\SchemaOrgGraph;
-use Rushing\SchemaOrg\Support\LdJson;
 use Spatie\SchemaOrg\Schema;
 
 it('assembles multiple nodes into a single @context + @graph document', function () {

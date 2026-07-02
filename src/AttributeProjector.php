@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Rushing\SchemaOrg;
+namespace Rushing\DataSchemaOrg;
 
 use InvalidArgumentException;
 use ReflectionClass;
 use ReflectionProperty;
+use Rushing\DataSchemaOrg\Attributes\SchemaOrgId;
+use Rushing\DataSchemaOrg\Attributes\SchemaOrgProperty;
+use Rushing\DataSchemaOrg\Attributes\SchemaOrgType;
+use Rushing\DataSchemaOrg\Contracts\SchemaOrgProjector;
 use Rushing\JsonReference\Vocabulary;
-use Rushing\SchemaOrg\Attributes\SchemaOrgId;
-use Rushing\SchemaOrg\Attributes\SchemaOrgProperty;
-use Rushing\SchemaOrg\Attributes\SchemaOrgType;
-use Rushing\SchemaOrg\Contracts\SchemaOrgProjector;
 use Spatie\LaravelData\Data;
 use Spatie\SchemaOrg\Type;
 

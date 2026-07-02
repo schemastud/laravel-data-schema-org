@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Blade;
-use Rushing\SchemaOrg\SchemaOrgGraph;
-use Rushing\SchemaOrg\Support\LdJson;
+use Rushing\DataSchemaOrg\SchemaOrgGraph;
+use Rushing\DataSchemaOrg\Support\LdJson;
 use Spatie\SchemaOrg\Schema;
 
 it('escapes a </script> sequence so a string cannot break out of the tag', function () {

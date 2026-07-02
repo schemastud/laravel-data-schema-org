@@ -8,7 +8,7 @@ return [
      * schema name). Leave empty to omit minted identity; hosts that already carry a NodeId
      * pass it explicitly on the ProjectionContext instead.
      */
-    'base_uri' => env('SCHEMA_ORG_BASE_URI', env('APP_URL')),
+    'base_uri' => env('DATA_SCHEMA_ORG_BASE_URI', env('APP_URL')),
 
     /*
      * The JSON-LD @context emitted at the root of an assembled graph.

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rushing\SchemaOrg;
+namespace Rushing\DataSchemaOrg;
 
 use Rushing\JsonReference\Vocabulary;
 use Spatie\SchemaOrg\Type;
@@ -58,6 +58,6 @@ final class SchemaOrgGraph
 
     private function context(): string
     {
-        return (string) config('schema-org.context', 'https://schema.org');
+        return (string) config('data-schema-org.context', 'https://schema.org');
     }
 }

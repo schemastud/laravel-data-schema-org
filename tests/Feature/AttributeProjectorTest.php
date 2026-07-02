@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
+use Rushing\DataSchemaOrg\AttributeProjector;
+use Rushing\DataSchemaOrg\ProjectionContext;
+use Rushing\DataSchemaOrg\Tests\Fixtures\ArticleData;
+use Rushing\DataSchemaOrg\Tests\Fixtures\PersonData;
 use Rushing\JsonReference\Vocabulary;
-use Rushing\SchemaOrg\AttributeProjector;
-use Rushing\SchemaOrg\ProjectionContext;
-use Rushing\SchemaOrg\Tests\Fixtures\ArticleData;
-use Rushing\SchemaOrg\Tests\Fixtures\PersonData;
 
 it('reflects the type and maps annotated properties', function () {
     $node = (new AttributeProjector(ArticleData::class))->project(

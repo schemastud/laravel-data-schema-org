@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Rushing\SchemaOrg\Attributes;
+namespace Rushing\DataSchemaOrg\Attributes;
 
 use Attribute;
+use Rushing\DataSchemaOrg\ProjectionContext;
 use Rushing\JsonReference\NodeId;
-use Rushing\SchemaOrg\ProjectionContext;
 
 /**
  * Marks the Data property that sources the node's `@id`. When present and non-null, its value is

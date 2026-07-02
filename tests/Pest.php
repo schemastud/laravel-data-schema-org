@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-use Rushing\SchemaOrg\Tests\TestCase;
+use Rushing\DataSchemaOrg\Tests\TestCase;
 
 uses(TestCase::class)->in('Feature');

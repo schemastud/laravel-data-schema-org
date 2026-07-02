@@ -1,9 +1,9 @@
 {
-    "name": "rushing/laravel-schema-org",
+    "name": "rushing/laravel-data-schema-org",
     "description": "A boundary projector marrying spatie/laravel-data DTOs to spatie/schema-org: a typed registry + attribute-driven primitives that project a Data object into a Schema.org node (JSON-LD) at the edge. Internal identity (@id) is reused from laravel-json-reference; the leaf stays domain-agnostic and never names concrete schema.org types.",
     "keywords": ["laravel", "schema-org", "json-ld", "structured-data", "laravel-data", "seo"],
     "type": "library",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "Stephen Rushing",
@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Rushing\\SchemaOrg\\": "src/"
+            "Rushing\\DataSchemaOrg\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Rushing\\SchemaOrg\\Tests\\": "tests/"
+            "Rushing\\DataSchemaOrg\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -40,7 +40,7 @@
         },
         "laravel": {
             "providers": [
-                "Rushing\\SchemaOrg\\ServiceProvider"
+                "Rushing\\DataSchemaOrg\\ServiceProvider"
             ]
         }
     },

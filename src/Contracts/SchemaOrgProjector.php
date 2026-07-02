@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Rushing\SchemaOrg\Contracts;
+namespace Rushing\DataSchemaOrg\Contracts;
 
+use Rushing\DataSchemaOrg\ProjectionContext;
 use Rushing\JsonReference\DereferencerRegistry;
-use Rushing\SchemaOrg\ProjectionContext;
 use Spatie\LaravelData\Data;
 use Spatie\SchemaOrg\Type;
 

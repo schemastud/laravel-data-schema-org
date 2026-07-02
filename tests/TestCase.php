@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Rushing\SchemaOrg\Tests;
+namespace Rushing\DataSchemaOrg\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use Rushing\SchemaOrg\ServiceProvider;
+use Rushing\DataSchemaOrg\ServiceProvider;
 use Spatie\LaravelData\LaravelDataServiceProvider;
 
 abstract class TestCase extends Orchestra

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Rushing\SchemaOrg\Attributes;
+namespace Rushing\DataSchemaOrg\Attributes;
 
 use Attribute;
-use Rushing\SchemaOrg\AttributeProjector;
+use Rushing\DataSchemaOrg\AttributeProjector;
 use Spatie\SchemaOrg\Schema;
 
 /**

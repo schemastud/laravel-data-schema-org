@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Rushing\SchemaOrg;
+namespace Rushing\DataSchemaOrg;
 
+use Rushing\DataSchemaOrg\Contracts\SchemaOrgProjector;
+use Rushing\DataSchemaOrg\Exceptions\UnknownProjector;
 use Rushing\JsonReference\DereferencerRegistry;
-use Rushing\SchemaOrg\Contracts\SchemaOrgProjector;
-use Rushing\SchemaOrg\Exceptions\UnknownProjector;
 use Spatie\LaravelData\Data;
 use Spatie\SchemaOrg\Type;
 

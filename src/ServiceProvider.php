@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rushing\SchemaOrg;
+namespace Rushing\DataSchemaOrg;
 
 use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Package;
@@ -13,8 +13,8 @@ class ServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('laravel-schema-org')
-            ->hasConfigFile('schema-org');
+            ->name('laravel-data-schema-org')
+            ->hasConfigFile('data-schema-org');
     }
 
     public function packageRegistered(): void
@@ -24,6 +24,6 @@ class ServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
-        Blade::directive('ldjson', fn (string $expression): string => "<?php echo \\Rushing\\SchemaOrg\\Support\\LdJson::script({$expression}); ?>");
+        Blade::directive('ldjson', fn (string $expression): string => "<?php echo \\Rushing\\DataSchemaOrg\\Support\\LdJson::script({$expression}); ?>");
     }
 }

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Rushing\SchemaOrg\Tests\Fixtures;
+namespace Rushing\DataSchemaOrg\Tests\Fixtures;
 
-use Rushing\SchemaOrg\Attributes\SchemaOrgProperty;
-use Rushing\SchemaOrg\Attributes\SchemaOrgType;
+use Rushing\DataSchemaOrg\Attributes\SchemaOrgProperty;
+use Rushing\DataSchemaOrg\Attributes\SchemaOrgType;
 use Spatie\LaravelData\Data;
 
 /**

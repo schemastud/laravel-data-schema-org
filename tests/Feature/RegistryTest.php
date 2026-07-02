@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-use Rushing\SchemaOrg\AttributeProjector;
-use Rushing\SchemaOrg\Exceptions\UnknownProjector;
-use Rushing\SchemaOrg\SchemaOrgRegistry;
-use Rushing\SchemaOrg\Tests\Fixtures\ArticleData;
-use Rushing\SchemaOrg\Tests\Fixtures\PersonData;
+use Rushing\DataSchemaOrg\AttributeProjector;
+use Rushing\DataSchemaOrg\Exceptions\UnknownProjector;
+use Rushing\DataSchemaOrg\SchemaOrgRegistry;
+use Rushing\DataSchemaOrg\Tests\Fixtures\ArticleData;
+use Rushing\DataSchemaOrg\Tests\Fixtures\PersonData;
 use Spatie\SchemaOrg\Article;
 
 it('dispatches a projector by Data class, never by node shape', function () {
