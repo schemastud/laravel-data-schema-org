@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 use Rushing\DataSchemaOrg\SchemaOrgGraph;
 use Rushing\DataSchemaOrg\Support\LdJson;
 use Rushing\JsonReference\Vocabulary;

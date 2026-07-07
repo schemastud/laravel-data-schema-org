@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Rushing\DataSchemaOrg\Attributes;
 
 use Attribute;
@@ -15,4 +13,4 @@ use Rushing\JsonReference\NodeId;
  * projection — internally the house keeps opaque {@see NodeId} values.
  */
 #[Attribute(Attribute::TARGET_PROPERTY)]
-final class SchemaOrgId {}
+class SchemaOrgId {}

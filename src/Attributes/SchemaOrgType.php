@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Rushing\DataSchemaOrg\Attributes;
 
 use Attribute;
@@ -15,7 +13,7 @@ use Spatie\SchemaOrg\Schema;
  * never in this leaf's src/.
  */
 #[Attribute(Attribute::TARGET_CLASS)]
-final class SchemaOrgType
+class SchemaOrgType
 {
-    public function __construct(public readonly string $type) {}
+    public function __construct(public string $type) {}
 }

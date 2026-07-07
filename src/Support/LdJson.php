@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Rushing\DataSchemaOrg\Support;
 
 use Rushing\DataSchemaOrg\SchemaOrgGraph;
@@ -13,7 +11,7 @@ use Spatie\SchemaOrg\Type;
  * keeps slashes/unicode unescaped for clean, crawler-friendly output. Render-agnostic: the package
  * core returns data; this is one optional way to put it on a page.
  */
-final class LdJson
+class LdJson
 {
     public const Flags = JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG;
 

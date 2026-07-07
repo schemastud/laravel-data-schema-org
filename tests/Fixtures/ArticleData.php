@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Rushing\DataSchemaOrg\Tests\Fixtures;
 
 use Rushing\DataSchemaOrg\Attributes\SchemaOrgProperty;

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Rushing\DataSchemaOrg;
 
 use Illuminate\Support\Facades\Blade;

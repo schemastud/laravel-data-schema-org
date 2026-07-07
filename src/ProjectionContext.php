@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Rushing\DataSchemaOrg;
 
 use Rushing\JsonReference\NodeId;
@@ -11,12 +9,12 @@ use Rushing\JsonReference\NodeId;
  * `@id` IRIs, an explicit identity override (e.g. a serialized {@see NodeId}
  * when the host already has one), and the locale. Immutable; `withId()` / `withBaseUri()` return copies.
  */
-final class ProjectionContext
+class ProjectionContext
 {
     public function __construct(
-        public readonly ?string $baseUri = null,
-        public readonly ?string $id = null,
-        public readonly ?string $locale = null,
+        public ?string $baseUri = null,
+        public ?string $id = null,
+        public ?string $locale = null,
     ) {}
 
     /**

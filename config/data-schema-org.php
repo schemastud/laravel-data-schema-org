@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 return [
     /*
      * Base URI used to mint default `@id` IRIs for projected nodes (combined with a DTO's

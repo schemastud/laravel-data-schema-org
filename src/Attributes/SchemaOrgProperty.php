@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Rushing\DataSchemaOrg\Attributes;
 
 use Attribute;
@@ -12,7 +10,7 @@ use Attribute;
  * value on the DTO is omitted from the node.
  */
 #[Attribute(Attribute::TARGET_PROPERTY)]
-final class SchemaOrgProperty
+class SchemaOrgProperty
 {
-    public function __construct(public readonly ?string $name = null) {}
+    public function __construct(public ?string $name = null) {}
 }

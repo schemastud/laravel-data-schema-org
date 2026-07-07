@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 use Rushing\DataSchemaOrg\AttributeProjector;
 use Rushing\DataSchemaOrg\ProjectionContext;
 use Rushing\DataSchemaOrg\Tests\Fixtures\ArticleData;

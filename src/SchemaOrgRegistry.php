@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Rushing\DataSchemaOrg;
 
 use Rushing\DataSchemaOrg\Contracts\SchemaOrgProjector;
@@ -15,7 +13,7 @@ use Spatie\SchemaOrg\Type;
  * mirror of {@see DereferencerRegistry}. Dispatch is by class, never by node
  * shape: a DTO resolves to exactly one projector. An unknown class throws rather than guessing.
  */
-final class SchemaOrgRegistry
+class SchemaOrgRegistry
 {
     /** @var array<class-string<Data>, SchemaOrgProjector> */
     private array $byClass = [];

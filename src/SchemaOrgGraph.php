@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Rushing\DataSchemaOrg;
 
 use Rushing\JsonReference\Vocabulary;
@@ -13,7 +11,7 @@ use Spatie\SchemaOrg\Type;
  * is stable instance identity, two projections of the same entity collapse to one graph entry.
  * Nodes without an `@id` are always kept (nothing to merge them on).
  */
-final class SchemaOrgGraph
+class SchemaOrgGraph
 {
     /** @var array<int, Type> */
     private array $nodes = [];

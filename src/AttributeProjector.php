@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Rushing\DataSchemaOrg;
 
 use InvalidArgumentException;
@@ -21,12 +19,12 @@ use Spatie\SchemaOrg\Type;
  * with irreducibly custom mapping registers its own {@see SchemaOrgProjector} instead; this covers
  * the common case, mirroring how the house JSON Schema generator reads DTO attributes.
  */
-final class AttributeProjector implements SchemaOrgProjector
+class AttributeProjector implements SchemaOrgProjector
 {
     /**
      * @param  class-string<Data>  $dataClass
      */
-    public function __construct(private readonly string $dataClass) {}
+    public function __construct(private string $dataClass) {}
 
     public function subject(): string
     {
