@@ -1,10 +1,10 @@
 <?php
 
-namespace Rushing\DataSchemaOrg\Tests\Fixtures;
+namespace Schemastud\DataSchemaOrg\Tests\Fixtures;
 
-use Rushing\DataSchemaOrg\Attributes\SchemaOrgId;
-use Rushing\DataSchemaOrg\Attributes\SchemaOrgProperty;
-use Rushing\DataSchemaOrg\Attributes\SchemaOrgType;
+use Schemastud\DataSchemaOrg\Attributes\SchemaOrgId;
+use Schemastud\DataSchemaOrg\Attributes\SchemaOrgProperty;
+use Schemastud\DataSchemaOrg\Attributes\SchemaOrgType;
 use Spatie\LaravelData\Data;
 
 /**

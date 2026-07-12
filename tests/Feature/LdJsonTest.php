@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Blade;
-use Rushing\DataSchemaOrg\SchemaOrgGraph;
-use Rushing\DataSchemaOrg\Support\LdJson;
+use Schemastud\DataSchemaOrg\SchemaOrgGraph;
+use Schemastud\DataSchemaOrg\Support\LdJson;
 use Spatie\SchemaOrg\Schema;
 
 it('escapes a </script> sequence so a string cannot break out of the tag', function () {

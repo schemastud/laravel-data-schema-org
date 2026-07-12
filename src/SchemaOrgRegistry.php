@@ -1,10 +1,10 @@
 <?php
 
-namespace Rushing\DataSchemaOrg;
+namespace Schemastud\DataSchemaOrg;
 
-use Rushing\DataSchemaOrg\Contracts\SchemaOrgProjector;
-use Rushing\DataSchemaOrg\Exceptions\UnknownProjector;
-use Rushing\JsonReference\DereferencerRegistry;
+use Schemastud\DataSchemaOrg\Contracts\SchemaOrgProjector;
+use Schemastud\DataSchemaOrg\Exceptions\UnknownProjector;
+use Schemastud\JsonReference\DereferencerRegistry;
 use Spatie\LaravelData\Data;
 use Spatie\SchemaOrg\Type;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Rushing\DataSchemaOrg\Attributes;
+namespace Schemastud\DataSchemaOrg\Attributes;
 
 use Attribute;
-use Rushing\DataSchemaOrg\ProjectionContext;
-use Rushing\JsonReference\NodeId;
+use Schemastud\DataSchemaOrg\ProjectionContext;
+use Schemastud\JsonReference\NodeId;
 
 /**
  * Marks the Data property that sources the node's `@id`. When present and non-null, its value is

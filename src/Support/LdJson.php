@@ -1,8 +1,8 @@
 <?php
 
-namespace Rushing\DataSchemaOrg\Support;
+namespace Schemastud\DataSchemaOrg\Support;
 
-use Rushing\DataSchemaOrg\SchemaOrgGraph;
+use Schemastud\DataSchemaOrg\SchemaOrgGraph;
 use Spatie\SchemaOrg\Type;
 
 /**

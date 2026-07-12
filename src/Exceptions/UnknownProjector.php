@@ -1,6 +1,6 @@
 <?php
 
-namespace Rushing\DataSchemaOrg\Exceptions;
+namespace Schemastud\DataSchemaOrg\Exceptions;
 
 use RuntimeException;
 

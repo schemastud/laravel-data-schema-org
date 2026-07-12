@@ -1,8 +1,8 @@
 <?php
 
-use Rushing\DataSchemaOrg\SchemaOrgGraph;
-use Rushing\DataSchemaOrg\Support\LdJson;
-use Rushing\JsonReference\Vocabulary;
+use Schemastud\DataSchemaOrg\SchemaOrgGraph;
+use Schemastud\DataSchemaOrg\Support\LdJson;
+use Schemastud\JsonReference\Vocabulary;
 use Spatie\SchemaOrg\Schema;
 
 it('assembles multiple nodes into a single @context + @graph document', function () {

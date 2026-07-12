@@ -1,5 +1,5 @@
 <?php
 
-use Rushing\DataSchemaOrg\Tests\TestCase;
+use Schemastud\DataSchemaOrg\Tests\TestCase;
 
 uses(TestCase::class)->in('Feature');

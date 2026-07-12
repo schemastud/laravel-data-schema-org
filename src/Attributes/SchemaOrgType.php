@@ -1,9 +1,9 @@
 <?php
 
-namespace Rushing\DataSchemaOrg\Attributes;
+namespace Schemastud\DataSchemaOrg\Attributes;
 
 use Attribute;
-use Rushing\DataSchemaOrg\AttributeProjector;
+use Schemastud\DataSchemaOrg\AttributeProjector;
 use Spatie\SchemaOrg\Schema;
 
 /**

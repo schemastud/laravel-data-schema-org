@@ -1,10 +1,10 @@
 <?php
 
-use Rushing\DataSchemaOrg\AttributeProjector;
-use Rushing\DataSchemaOrg\Exceptions\UnknownProjector;
-use Rushing\DataSchemaOrg\SchemaOrgRegistry;
-use Rushing\DataSchemaOrg\Tests\Fixtures\ArticleData;
-use Rushing\DataSchemaOrg\Tests\Fixtures\PersonData;
+use Schemastud\DataSchemaOrg\AttributeProjector;
+use Schemastud\DataSchemaOrg\Exceptions\UnknownProjector;
+use Schemastud\DataSchemaOrg\SchemaOrgRegistry;
+use Schemastud\DataSchemaOrg\Tests\Fixtures\ArticleData;
+use Schemastud\DataSchemaOrg\Tests\Fixtures\PersonData;
 use Spatie\SchemaOrg\Article;
 
 it('dispatches a projector by Data class, never by node shape', function () {

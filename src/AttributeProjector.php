@@ -1,15 +1,15 @@
 <?php
 
-namespace Rushing\DataSchemaOrg;
+namespace Schemastud\DataSchemaOrg;
 
 use InvalidArgumentException;
 use ReflectionClass;
 use ReflectionProperty;
-use Rushing\DataSchemaOrg\Attributes\SchemaOrgId;
-use Rushing\DataSchemaOrg\Attributes\SchemaOrgProperty;
-use Rushing\DataSchemaOrg\Attributes\SchemaOrgType;
-use Rushing\DataSchemaOrg\Contracts\SchemaOrgProjector;
-use Rushing\JsonReference\Vocabulary;
+use Schemastud\DataSchemaOrg\Attributes\SchemaOrgId;
+use Schemastud\DataSchemaOrg\Attributes\SchemaOrgProperty;
+use Schemastud\DataSchemaOrg\Attributes\SchemaOrgType;
+use Schemastud\DataSchemaOrg\Contracts\SchemaOrgProjector;
+use Schemastud\JsonReference\Vocabulary;
 use Spatie\LaravelData\Data;
 use Spatie\SchemaOrg\Type;
 

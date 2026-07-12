@@ -1,6 +1,6 @@
 <?php
 
-namespace Rushing\DataSchemaOrg;
+namespace Schemastud\DataSchemaOrg;
 
 use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Package;
@@ -22,6 +22,6 @@ class ServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
-        Blade::directive('ldjson', fn (string $expression): string => "<?php echo \\Rushing\\DataSchemaOrg\\Support\\LdJson::script({$expression}); ?>");
+        Blade::directive('ldjson', fn (string $expression): string => "<?php echo \\Schemastud\\DataSchemaOrg\\Support\\LdJson::script({$expression}); ?>");
     }
 }

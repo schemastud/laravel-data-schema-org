@@ -1,9 +1,9 @@
 <?php
 
-namespace Rushing\DataSchemaOrg\Contracts;
+namespace Schemastud\DataSchemaOrg\Contracts;
 
-use Rushing\DataSchemaOrg\ProjectionContext;
-use Rushing\JsonReference\DereferencerRegistry;
+use Schemastud\DataSchemaOrg\ProjectionContext;
+use Schemastud\JsonReference\DereferencerRegistry;
 use Spatie\LaravelData\Data;
 use Spatie\SchemaOrg\Type;
 

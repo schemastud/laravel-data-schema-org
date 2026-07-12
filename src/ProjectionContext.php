@@ -1,8 +1,8 @@
 <?php
 
-namespace Rushing\DataSchemaOrg;
+namespace Schemastud\DataSchemaOrg;
 
-use Rushing\JsonReference\NodeId;
+use Schemastud\JsonReference\NodeId;
 
 /**
  * The boundary concerns a projection needs but a DTO shouldn't carry: the base URI used to mint

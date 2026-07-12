@@ -1,10 +1,10 @@
 <?php
 
-use Rushing\DataSchemaOrg\AttributeProjector;
-use Rushing\DataSchemaOrg\ProjectionContext;
-use Rushing\DataSchemaOrg\Tests\Fixtures\ArticleData;
-use Rushing\DataSchemaOrg\Tests\Fixtures\PersonData;
-use Rushing\JsonReference\Vocabulary;
+use Schemastud\DataSchemaOrg\AttributeProjector;
+use Schemastud\DataSchemaOrg\ProjectionContext;
+use Schemastud\DataSchemaOrg\Tests\Fixtures\ArticleData;
+use Schemastud\DataSchemaOrg\Tests\Fixtures\PersonData;
+use Schemastud\JsonReference\Vocabulary;
 
 it('reflects the type and maps annotated properties', function () {
     $node = (new AttributeProjector(ArticleData::class))->project(

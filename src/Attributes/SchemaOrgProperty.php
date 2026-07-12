@@ -1,6 +1,6 @@
 <?php
 
-namespace Rushing\DataSchemaOrg\Attributes;
+namespace Schemastud\DataSchemaOrg\Attributes;
 
 use Attribute;
 

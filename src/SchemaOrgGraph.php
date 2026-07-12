@@ -1,8 +1,8 @@
 <?php
 
-namespace Rushing\DataSchemaOrg;
+namespace Schemastud\DataSchemaOrg;
 
-use Rushing\JsonReference\Vocabulary;
+use Schemastud\JsonReference\Vocabulary;
 use Spatie\SchemaOrg\Type;
 
 /**
