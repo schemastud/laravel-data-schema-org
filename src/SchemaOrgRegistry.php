@@ -9,7 +9,6 @@ use Rushing\Popcorn\Registries\IsRegistry;
 use Rushing\Popcorn\Registries\Key;
 use Rushing\Popcorn\Registries\OnDuplicate;
 use Rushing\Popcorn\Registries\Registry;
-use Rushing\Popcorn\Registries\RegistryArity;
 use Rushing\Popcorn\Registries\RegistryKey;
 use Schemastud\DataSchemaOrg\Contracts\SchemaOrgProjector;
 use Schemastud\DataSchemaOrg\Exceptions\UnknownProjector;
@@ -36,16 +35,9 @@ use Spatie\SchemaOrg\Type;
  */
 #[IsRegistry(
     root: 'schema-org.projectors',
-    of: 'schema.org projectors keyed by the Data class each handles — the emit-side pair of the '
-        .'dereferencer registry',
-    arity: RegistryArity::PickOne,
     entryType: SchemaOrgProjector::class,
     onDuplicate: OnDuplicate::Supersede,
-    note: 'PickOne for the reason `AcpFeedRegistry` spells out: `project()` LOOKS like a fan-out and is '
-        .'not one — it dispatches ONE instance by $data::class to exactly one projector. The projector '
-        .'names its own key via subject(), so there is no key to put in config. The key is the subject '
-        .'class path segment-mapped (`App\\Data\\OfferData` => `app.data.offer-data`), because a '
-        .'basename-only derivation would let two same-named DTOs supersede each other.',
+    description: 'Schema.org projectors keyed by their subject Data class. project() dispatches each instance to one projector. Keys include the subject namespace so same-named DTOs remain distinct.',
     order: 53,
 )]
 class SchemaOrgRegistry implements Gated, Registry
