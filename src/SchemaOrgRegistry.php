@@ -7,7 +7,7 @@ use Rushing\Popcorn\Registries\BasicRegistry;
 use Rushing\Popcorn\Registries\Gated;
 use Rushing\Popcorn\Registries\IsRegistry;
 use Rushing\Popcorn\Registries\Key;
-use Rushing\Popcorn\Registries\OnDuplicate;
+use Rushing\Popcorn\Registries\OnKeyDuplicate;
 use Rushing\Popcorn\Registries\Registry;
 use Rushing\Popcorn\Registries\RegistryKey;
 use Schemastud\DataSchemaOrg\Contracts\SchemaOrgProjector;
@@ -26,7 +26,7 @@ use Spatie\SchemaOrg\Type;
  * `Key::fromClass()` is the kernel's sanctioned derivation for class-strings and it takes the
  * basename — right where the class-string is the ENTRY and nothing looks up by key. Here the class
  * IS the lookup identity, and two `OfferData` classes in two namespaces would have collided on
- * `offer-data` under {@see OnDuplicate::Supersede}, silently losing a projector at registration.
+ * `offer-data` under {@see OnKeyDuplicate::Supersede}, silently losing a projector at registration.
  * So the namespace becomes the key's segments and the short name keeps `fromClass()`'s kebab rule:
  * `Splicewire\Beam\Commerce\Data\OfferData` → `schema-org.projectors.splicewire.beam.commerce.data.offer-data`.
  * Every historical caller still spells the FQCN and never sees this.
@@ -36,7 +36,7 @@ use Spatie\SchemaOrg\Type;
 #[IsRegistry(
     root: 'schema-org.projectors',
     entryType: SchemaOrgProjector::class,
-    onDuplicate: OnDuplicate::Supersede,
+    onKeyDuplicate: OnKeyDuplicate::Supersede,
     description: 'Schema.org projectors keyed by their subject Data class. project() dispatches each instance to one projector. Keys include the subject namespace so same-named DTOs remain distinct.',
     order: 53,
 )]
