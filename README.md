@@ -14,7 +14,7 @@ semantic one, at the boundary, without changing your internal model.
 A `Data` class declares its Schema.org mapping with attributes. A registry dispatches a DTO to the
 projector registered for its class and returns a `Spatie\SchemaOrg\Type`, which you render as a
 JSON-LD `<script>` block. Identity (`@id`) is reused from
-[rushing/laravel-json-reference](https://github.com/stephenr85/laravel-json-reference), so a node
+[schemastud/laravel-json-reference](https://github.com/schemastud/laravel-json-reference), so a node
 means the same thing across the system.
 
 The package projects only. It never becomes your house model and never assumes a render surface.
@@ -22,7 +22,7 @@ The package projects only. It never becomes your house model and never assumes a
 ## Installation
 
 ```bash
-composer require rushing/laravel-data-schema-org
+composer require schemastud/laravel-data-schema-org
 ```
 
 The config file is optional:
@@ -146,7 +146,7 @@ LdJson::script($node, nonce: $cspNonce);
 1. An `id` set on the `ProjectionContext` (e.g. a serialized `NodeId` your host already holds).
 2. A DTO property marked `#[SchemaOrgId]`.
 3. A default minted as `{base_uri}/{schemaName}` when the DTO exposes a static `schemaName()`
-   (the [laravel-data-schemas](https://github.com/stephenr85/laravel-data-schemas) `SchemaIdentity`
+   (the [laravel-data-schemas](https://github.com/schemastud/laravel-data-schemas) `SchemaIdentity`
    contract) and a base URI is configured.
 
 The key itself is `Rushing\JsonReference\Vocabulary::Id`, not a local literal — the IRI is a
