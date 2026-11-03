@@ -1,0 +1,83 @@
+---
+title: Schema.org projectors
+segment: schema-org.projectors
+nav_order: 53
+excerpt: One projector per Data class, turning a DTO into the schema.org JSON-LD node search engines read.
+---
+
+# Schema.org projectors
+
+`schema-org.projectors` maps a Data class to the **projector** that turns an instance of it into a
+[schema.org](https://schema.org) node: the JSON-LD a page embeds so browsers and crawlers know an
+article is an `Article`, with a `headline` and a `datePublished`. Your Data object stays your model;
+the projector is a view of it for the public, semantic vocabulary, built with
+[spatie/schema-org](https://github.com/spatie/schema-org).
+
+{/* registry-facts:start — generated from the #[IsRegistry] declaration by `splicewire:beam:docs:registries:scaffold`. Rerun the command; do not edit between these markers. */}
+
+- **Root:** `schema-org.projectors`
+- **Entries:** `Schemastud\DataSchemaOrg\Contracts\SchemaOrgProjector`
+- **Duplicate keys:** Supersede — a later registration under a taken key replaces the earlier entry, in its place
+- **Population:** Optional — an empty registry is normal
+- **Order:** `53` (display order, ascending)
+- **Declared by:** `Schemastud\DataSchemaOrg\SchemaOrgRegistry`
+
+{/* registry-facts:end */}
+
+## Registering a projector
+
+Most Data classes need no projector code of their own. Annotate the class with `#[SchemaOrgType]`
+and its properties with `#[SchemaOrgProperty]`, then register the attribute-driven projector for it:
+
+```php
+use Schemastud\DataSchemaOrg\AttributeProjector;
+use Schemastud\DataSchemaOrg\SchemaOrgRegistry;
+
+public function boot(): void
+{
+    $this->app->make(SchemaOrgRegistry::class)
+        ->register(new AttributeProjector(ArticleData::class));
+}
+```
+
+A projector registers under the class its `subject()` names. When the mapping needs logic the
+attributes can't express, implement `SchemaOrgProjector` yourself: `subject()` returns the Data
+class, and `project($data, $context)` returns a `Spatie\SchemaOrg\Type`.
+
+## Keys are whole class names
+
+The key is built from the full class name, namespace included:
+`App\Data\ArticleData` is stored as `schema-org.projectors.app.data.article-data`. Two classes
+with the same short name in different namespaces stay separate. You never spell the encoded form;
+every method takes the class name.
+
+The duplicate policy is **supersede**: registering a projector for a class that already has one
+replaces it, which is how an application overrides a package's mapping for a shared DTO.
+
+## Projecting
+
+```php
+use Schemastud\DataSchemaOrg\SchemaOrgRegistry;
+
+$node = app(SchemaOrgRegistry::class)->project($article);   // a Spatie\SchemaOrg\Type
+```
+
+`project()` finds the projector for the instance's exact class and runs it. A class with no
+projector throws `UnknownProjector` rather than guessing; resolution is by class only, never by the
+shape of the data. Pass a `ProjectionContext` to set the base URI or an explicit `@id`; without one
+the context comes from `config('data-schema-org')`. Render the result with the `@ldjson` Blade
+directive or `LdJson::script()`.
+
+## Related registries
+
+- [`jsonref.dereferencers`](https://github.com/schemastud/laravel-json-reference/blob/main/docs/registries/jsonref.dereferencers.mdx)
+  — the read-side counterpart, where identity (`@id`) comes from.
+- [The schemas cluster](https://github.com/schemastud/laravel-data-schemas/blob/main/docs/registries/schemas.mdx)
+  — the schema substrate the same Data classes are projected through.
+
+## Going deeper
+
+The [package README](https://github.com/schemastud/laravel-data-schema-org#readme) covers the
+attributes, identity rules and graph assembly. [Popcorn registries](/beam/docs/foundations/registries)
+explains roots, keys and duplicate policies in general. The registry's source is
+[`SchemaOrgRegistry`](https://github.com/schemastud/laravel-data-schema-org/blob/main/src/SchemaOrgRegistry.php).
