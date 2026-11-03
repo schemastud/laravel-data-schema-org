@@ -49,8 +49,8 @@ return [
 ### 1. Annotate a Data object
 
 ```php
-use Rushing\DataSchemaOrg\Attributes\SchemaOrgType;
-use Rushing\DataSchemaOrg\Attributes\SchemaOrgProperty;
+use Schemastud\DataSchemaOrg\Attributes\SchemaOrgType;
+use Schemastud\DataSchemaOrg\Attributes\SchemaOrgProperty;
 use Spatie\LaravelData\Data;
 
 #[SchemaOrgType('Article')]
@@ -78,8 +78,8 @@ The attribute-driven `AttributeProjector` handles any annotated DTO with no besp
 it once, typically in a service provider:
 
 ```php
-use Rushing\DataSchemaOrg\AttributeProjector;
-use Rushing\DataSchemaOrg\SchemaOrgRegistry;
+use Schemastud\DataSchemaOrg\AttributeProjector;
+use Schemastud\DataSchemaOrg\SchemaOrgRegistry;
 
 public function boot(): void
 {
@@ -91,8 +91,8 @@ public function boot(): void
 ### 3. Project
 
 ```php
-use Rushing\DataSchemaOrg\ProjectionContext;
-use Rushing\DataSchemaOrg\SchemaOrgRegistry;
+use Schemastud\DataSchemaOrg\ProjectionContext;
+use Schemastud\DataSchemaOrg\SchemaOrgRegistry;
 
 $node = app(SchemaOrgRegistry::class)->project(
     $article,
@@ -132,7 +132,7 @@ return inertia('Post/Show', ['jsonLd' => $node->toArray()]);
 Or render the string directly with the helper, which escapes any `</script>` in the content:
 
 ```php
-use Rushing\DataSchemaOrg\Support\LdJson;
+use Schemastud\DataSchemaOrg\Support\LdJson;
 
 LdJson::script($node);          // full <script> block
 LdJson::encode($node);          // just the JSON
@@ -149,7 +149,7 @@ LdJson::script($node, nonce: $cspNonce);
    (the [laravel-data-schemas](https://github.com/schemastud/laravel-data-schemas) `SchemaIdentity`
    contract) and a base URI is configured.
 
-The key itself is `Rushing\JsonReference\Vocabulary::Id`, not a local literal — the IRI is a
+The key itself is `Schemastud\JsonReference\Vocabulary::Id`, not a local literal — the IRI is a
 boundary projection; your internal identity stays opaque.
 
 ## Graphs
@@ -158,7 +158,7 @@ Assemble several nodes into one JSON-LD document. Nodes sharing an `@id` collaps
 `@context` is emitted once at the root.
 
 ```php
-use Rushing\DataSchemaOrg\SchemaOrgGraph;
+use Schemastud\DataSchemaOrg\SchemaOrgGraph;
 use Spatie\SchemaOrg\Schema;
 
 $graph = (new SchemaOrgGraph)
@@ -174,8 +174,8 @@ LdJson::script($graph);
 When attribute mapping isn't enough, implement the contract and register it the same way:
 
 ```php
-use Rushing\DataSchemaOrg\Contracts\SchemaOrgProjector;
-use Rushing\DataSchemaOrg\ProjectionContext;
+use Schemastud\DataSchemaOrg\Contracts\SchemaOrgProjector;
+use Schemastud\DataSchemaOrg\ProjectionContext;
 use Spatie\LaravelData\Data;
 use Spatie\SchemaOrg\Schema;
 use Spatie\SchemaOrg\Type;
@@ -198,6 +198,13 @@ final class ProductProjector implements SchemaOrgProjector
 
 Dispatch is by Data class, never by node shape. An unregistered class throws `UnknownProjector`
 rather than guessing.
+
+## Registries
+
+This package declares one registry:
+
+- [`schema-org.projectors`](docs/registries/schema-org.projectors.mdx): the projector for each Data
+  class, which `SchemaOrgRegistry::project()` dispatches to.
 
 ## Requirements
 
