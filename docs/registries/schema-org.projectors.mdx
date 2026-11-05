@@ -53,8 +53,9 @@ The key is built from the full class name, namespace included:
 with the same short name in different namespaces stay separate. You never spell the encoded form;
 every method takes the class name.
 
-The duplicate policy is **supersede**: registering a projector for a class that already has one
-replaces it, which is how an application overrides a package's mapping for a shared DTO.
+The [**duplicate-key policy**](/beam/docs/foundations/registries#key-policies) is
+**supersede**: registering a projector for a class that already has one replaces it, which is how an
+application overrides a package's mapping for a shared DTO.
 
 ## Projecting
 
